@@ -1,5 +1,10 @@
 # the-elsewhere — STATUS
 
+## 2026-08-13 — extra rooms live
+
+- Portal now sends people to Pet the Void and Hunted 404. Live: https://the-elsewhere.vercel.app
+- Next: none required.
+
 ## 2026-08-13 — extra rooms
 
 - Portal destinations now include Pet the Void and Hunted 404 plus more cabinet toys.
