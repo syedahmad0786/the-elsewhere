@@ -1,3 +1,5 @@
+@import "./kit/overlays.css";
+@import "./kit/tokens.css";
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap");
 
 :root {
@@ -153,6 +155,28 @@ a:hover {
   color: var(--ink-soft);
 }
 
+.studio-vignette {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 36;
+  background: radial-gradient(ellipse at 50% 28%, transparent 46%, rgba(26, 22, 18, 0.22) 100%);
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.mark {
+  display: block;
+  width: 44px;
+  height: 44px;
+  flex: none;
+  filter: drop-shadow(0 2px 4px rgba(26, 22, 18, 0.18));
+}
+
 .mast h1,
 .room-mast h1 {
   margin: 0;
@@ -179,7 +203,14 @@ a:hover {
   padding: 1.4rem 1.4rem 4rem;
 }
 
+.brass-stage {
+  perspective: 1200px;
+}
+
 .brass {
+  --rx: 0deg;
+  --ry: 0deg;
+  --z: 0px;
   appearance: none;
   display: grid;
   gap: 0.7rem;
@@ -188,23 +219,48 @@ a:hover {
   min-height: clamp(240px, 44vh, 430px);
   padding: 1.8rem 1.4rem;
   border: 1px solid var(--ink);
+  position: relative;
+  overflow: hidden;
   background:
-    linear-gradient(180deg, #c4a36a 0%, #8d6e44 46%, #6a5130 100%);
+    radial-gradient(circle at 22% 16%, rgba(255, 236, 190, 0.72), transparent 38%),
+    linear-gradient(180deg, #d8b87a 0%, #c4a36a 14%, #8d6e44 48%, #5a4324 100%);
   color: var(--paper);
   cursor: pointer;
   box-shadow:
-    inset 0 1px 0 rgba(255, 240, 210, 0.55),
-    inset 0 -10px 22px rgba(26, 18, 8, 0.32),
-    0 22px 48px rgba(26, 22, 18, 0.18);
+    inset 0 2px 0 rgba(255, 244, 214, 0.7),
+    inset 0 -16px 28px rgba(26, 18, 8, 0.42),
+    inset 0 0 0 10px rgba(90, 67, 36, 0.28),
+    0 28px 56px rgba(26, 22, 18, 0.22);
+  transform: rotateX(var(--rx)) rotateY(var(--ry)) translateZ(var(--z));
+  transform-style: preserve-3d;
   transition: transform 0.16s ease, filter 0.16s ease;
 }
 
+.brass::before {
+  content: "";
+  position: absolute;
+  inset: 9% 8%;
+  background: linear-gradient(118deg, rgba(255, 255, 255, 0.32), transparent 42%);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.brass::after {
+  content: "";
+  position: absolute;
+  inset: 12px;
+  border: 1px solid rgba(255, 236, 190, 0.28);
+  pointer-events: none;
+}
+
 .brass:hover {
-  filter: brightness(1.05);
+  --z: 16px;
+  filter: brightness(1.06);
 }
 
 .brass:active {
-  transform: translateY(3px);
+  --z: 2px;
+  filter: brightness(0.96);
 }
 
 .brass:focus-visible {
@@ -261,13 +317,28 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.4rem;
+  perspective: 1000px;
 }
 
 .wing {
+  --rx: 0deg;
+  --ry: 0deg;
+  --z: 0px;
   padding: 1.1rem 1rem 1.2rem;
   border: 1px solid var(--ink);
-  background: rgba(251, 246, 234, 0.55);
-  box-shadow: 0.4rem 0.4rem 0 var(--paper-deep);
+  background:
+    linear-gradient(180deg, rgba(255, 252, 244, 0.92), rgba(251, 246, 234, 0.7));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    0.45rem 0.5rem 0 var(--paper-deep),
+    0 16px 28px rgba(26, 22, 18, 0.1);
+  transform: rotateX(var(--rx)) rotateY(var(--ry)) translateZ(var(--z));
+  transform-style: preserve-3d;
+  transition: transform 0.16s ease;
+}
+
+.wing:hover {
+  --z: 12px;
 }
 
 .wing h2 {
@@ -303,6 +374,7 @@ a:hover {
 
 .ink-btn {
   appearance: none;
+  min-height: 44px;
   padding: 0.7rem 1.1rem;
   border: 1px solid var(--ink);
   background: var(--ink);
@@ -312,6 +384,7 @@ a:hover {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   cursor: pointer;
+  transition: transform 0.12s ease, background 0.12s ease;
 }
 
 .ink-btn.ghost {
@@ -323,6 +396,10 @@ a:hover {
   background: var(--wax);
   border-color: var(--wax);
   color: var(--paper);
+}
+
+.ink-btn:active {
+  transform: translateY(1px);
 }
 
 .share-note {
@@ -591,12 +668,17 @@ a:hover {
 }
 
 .vial {
+  --rx: 0deg;
+  --ry: 0deg;
+  --z: 0px;
   position: relative;
   height: 1.15rem;
   border: 1px solid var(--ink);
   background: var(--paper-lift);
-  box-shadow: inset 0 0 0 1px var(--brass-hi), 0 10px 24px rgba(26, 22, 18, 0.08);
+  box-shadow: inset 0 0 0 1px var(--brass-hi), inset 0 -4px 8px rgba(26, 22, 18, 0.12), 0 10px 24px rgba(26, 22, 18, 0.08);
   overflow: hidden;
+  transform: rotateX(var(--rx)) rotateY(var(--ry)) translateZ(var(--z));
+  transform-style: preserve-3d;
 }
 
 .fill {
@@ -668,7 +750,9 @@ a:hover {
   .brass,
   .ritual,
   .caret,
-  .bee-wings {
+  .bee-wings,
+  .wing,
+  .ink-btn {
     animation: none;
     transition: none;
   }
@@ -676,5 +760,17 @@ a:hover {
   .paper-grain,
   .watermark {
     animation: none;
+  }
+
+  .brass,
+  .brass:hover,
+  .brass:active,
+  .wing,
+  .wing:hover,
+  .vial {
+    --rx: 0deg;
+    --ry: 0deg;
+    --z: 0px;
+    transform: none;
   }
 }

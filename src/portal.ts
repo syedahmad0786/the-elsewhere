@@ -1,4 +1,6 @@
 import "./style.css";
+import { animate } from "motion";
+import { bindTilt, reducedMotion } from "./studio";
 import { playSting } from "./audio";
 import { byKind, pickRandom, type Destination, type Kind } from "./destinations";
 import { must, mustButton, mustCanvas } from "./dom";
@@ -20,6 +22,11 @@ function init(): void {
   mustButton("go").addEventListener("click", () => void sendElsewhere(false));
   mustButton("share-sentence").addEventListener("click", () => void onShare());
   mustButton("share-card").addEventListener("click", () => void onCard());
+  bindTilt(mustButton("go"), 8, 18);
+  document.querySelectorAll<HTMLElement>(".wing").forEach((el) => bindTilt(el, 6, 10));
+  if (!reducedMotion()) {
+    animate(".brass", { opacity: [0, 1], y: [18, 0] }, { duration: 0.7 });
+  }
   maybeAutoGo();
 }
 

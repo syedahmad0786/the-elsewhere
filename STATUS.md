@@ -1,5 +1,9 @@
 # the-elsewhere — STATUS
 
+## 2026-08-14 � premium studio look
+
+Brass portal 3D tilt, catalog wing tilt, Motion One enter, logo on stamp mast. Reduced motion disables heavy 3D. Webring: https://fun-toys-alpha.vercel.app
+
 ## 2026-08-13 — extra rooms live
 
 - Portal now sends people to Pet the Void and Hunted 404. Live: https://the-elsewhere.vercel.app

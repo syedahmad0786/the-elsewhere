@@ -9,6 +9,9 @@
       content="A loading bar that is a life. It finishes only if you leave."
     />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="./favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <meta property="og:image" content="./og.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,18 +21,22 @@
   </head>
   <body class="room life-room">
     <canvas id="paper-grain" class="paper-grain" aria-hidden="true"></canvas>
+    <div class="studio-vignette" aria-hidden="true"></div>
     <div class="watermark" aria-hidden="true">LIFE</div>
 
     <header class="room-mast">
       <a class="back" href="./index.html">← the portal</a>
       <p class="stamp small">FT–012.C</p>
-      <h1>Unfinished</h1>
+      <div class="title-row">
+        <img class="mark" src="./logo.svg" width="44" height="44" alt="" />
+        <h1>Unfinished</h1>
+      </div>
       <p class="exhibit">A loading bar that is a life. Stay, and it will not conclude.</p>
     </header>
 
     <main class="life-main">
       <p id="protocol" class="protocol">ESTIMATING REMAINING LIFE…</p>
-      <div class="vial" aria-hidden="true">
+      <div class="vial" id="vial" aria-hidden="true">
         <div id="fill" class="fill"></div>
       </div>
       <p id="percent" class="percent" aria-live="polite">LIFE&nbsp;&nbsp;0.0%</p>

@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ELSEWHERE — Take me somewhere useless</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta property="og:image" content="/og.svg" />
     <meta
       name="description"
       content="FT–012. A public portal for private waste. Ring once to be filed under miscellaneous."
@@ -15,6 +20,9 @@
     />
     <meta property="og:type" content="website" />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="./favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <meta property="og:image" content="./og.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,13 +32,17 @@
   </head>
   <body class="portal">
     <canvas id="paper-grain" class="paper-grain" aria-hidden="true"></canvas>
+    <div class="studio-vignette" aria-hidden="true"></div>
     <div class="watermark" aria-hidden="true">ELSEWHERE</div>
 
     <header class="mast">
       <p class="stamp" aria-label="Accession number">FT–012</p>
       <div class="mast-copy">
         <p class="kicker">Room 12 · Please do not ask where the exits are</p>
-        <h1>The Elsewhere</h1>
+        <div class="title-row">
+          <img class="mark" src="./logo.svg" width="44" height="44" alt="" />
+          <h1>The Elsewhere</h1>
+        </div>
         <p class="lede">
           A public portal for private waste. Established for no reason that has
           survived the minutes.
@@ -39,10 +51,12 @@
     </header>
 
     <main class="portal-main">
-      <button class="brass" id="go" type="button">
-        <span class="brass-title">Take me somewhere useless</span>
-        <span class="brass-hint">ring once · filing under miscellaneous</span>
-      </button>
+      <div class="brass-stage" id="brass-stage">
+        <button class="brass" id="go" type="button">
+          <span class="brass-title">Take me somewhere useless</span>
+          <span class="brass-hint">ring once · filing under miscellaneous</span>
+        </button>
+      </div>
       <p id="last-sent" class="last-sent" hidden></p>
 
       <section class="wings-intro">
