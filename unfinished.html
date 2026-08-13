@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Unfinished — ELSEWHERE</title>
+    <meta
+      name="description"
+      content="A loading bar that is a life. It finishes only if you leave."
+    />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="room life-room">
+    <canvas id="paper-grain" class="paper-grain" aria-hidden="true"></canvas>
+    <div class="watermark" aria-hidden="true">LIFE</div>
+
+    <header class="room-mast">
+      <a class="back" href="./index.html">← the portal</a>
+      <p class="stamp small">FT–012.C</p>
+      <h1>Unfinished</h1>
+      <p class="exhibit">A loading bar that is a life. Stay, and it will not conclude.</p>
+    </header>
+
+    <main class="life-main">
+      <p id="protocol" class="protocol">ESTIMATING REMAINING LIFE…</p>
+      <div class="vial" aria-hidden="true">
+        <div id="fill" class="fill"></div>
+      </div>
+      <p id="percent" class="percent" aria-live="polite">LIFE&nbsp;&nbsp;0.0%</p>
+      <p id="event" class="life-event"><span id="typed"></span><span class="caret" aria-hidden="true">▍</span></p>
+    </main>
+
+    <footer class="due-slip">
+      <p class="due-mark">See also</p>
+      <nav class="webring" aria-label="Fun Toys webring">
+        <a href="https://fun-toys-alpha.vercel.app">hub</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://rake-garden.vercel.app">prev</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://elsewho.vercel.app">next</a>
+      </nav>
+      <p class="colophon">Ahmad Bukhari · FT–012.C · MIT 2026</p>
+    </footer>
+
+    <script type="module" src="/src/unfinished.ts"></script>
+  </body>
+</html>

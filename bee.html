@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Apology Bee — ELSEWHERE</title>
+    <meta
+      name="description"
+      content="A bee that apologizes, specifically, for crimes it has not committed."
+    />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="room bee-room">
+    <canvas id="paper-grain" class="paper-grain" aria-hidden="true"></canvas>
+    <div class="watermark" aria-hidden="true">APOLOGY</div>
+
+    <header class="room-mast">
+      <a class="back" href="./index.html">← the portal</a>
+      <p class="stamp small">FT–012.B</p>
+      <h1>The Apology Bee</h1>
+      <p class="exhibit">
+        It has not committed these crimes. It would still like it on the record.
+      </p>
+    </header>
+
+    <div id="meadow" class="stage meadow" aria-label="The apology bee">
+      <div id="bee-wrap" class="bee-wrap">
+        <p id="bubble" class="bubble">sorry about the picnic</p>
+        <svg
+          id="bee"
+          class="bee"
+          viewBox="0 0 88 70"
+          role="img"
+          aria-label="A natural-history plate of a bee"
+        >
+          <g class="bee-wings">
+            <ellipse cx="28" cy="18" rx="16" ry="10" fill="#f6f0e4" stroke="#1a1612" stroke-width="1.2" opacity="0.85" />
+            <ellipse cx="48" cy="16" rx="15" ry="9" fill="#fffdf7" stroke="#1a1612" stroke-width="1.2" opacity="0.8" />
+          </g>
+          <ellipse cx="40" cy="40" rx="22" ry="16" fill="#1a1612" />
+          <ellipse cx="40" cy="40" rx="20" ry="14" fill="#c4a36a" />
+          <path d="M28 28c0 8 2 16 0 24" fill="none" stroke="#1a1612" stroke-width="5" />
+          <path d="M40 26c0 9 0 18 0 28" fill="none" stroke="#1a1612" stroke-width="5" />
+          <path d="M52 28c0 8-2 16 0 24" fill="none" stroke="#1a1612" stroke-width="5" />
+          <circle cx="22" cy="38" r="8" fill="#1a1612" />
+          <circle cx="19" cy="36" r="2.1" fill="#f4ead8" />
+          <path d="M14 38c-6 2-8 8-6 12" fill="none" stroke="#1a1612" stroke-width="1.4" />
+          <path d="M62 40c8 4 12 4 16 0" fill="none" stroke="#1a1612" stroke-width="1.5" stroke-linecap="round" />
+          <path d="M30 52c-2 8-6 12-10 14M40 54c0 10-2 14-2 16M50 52c2 8 4 12 8 14" fill="none" stroke="#1a1612" stroke-width="1.2" />
+          <path id="tear" class="tear" d="M58 52c0 4-3 7-6 7s-6-3-6-7c0-3 6-9 6-9s6 6 6 9z" fill="#6a8aa0" />
+        </svg>
+      </div>
+    </div>
+
+    <footer class="due-slip">
+      <p class="due-mark">See also</p>
+      <nav class="webring" aria-label="Fun Toys webring">
+        <a href="https://fun-toys-alpha.vercel.app">hub</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://rake-garden.vercel.app">prev</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://elsewho.vercel.app">next</a>
+      </nav>
+      <p class="colophon">Ahmad Bukhari · FT–012.B · MIT 2026</p>
+    </footer>
+
+    <script type="module" src="/src/bee.ts"></script>
+  </body>
+</html>

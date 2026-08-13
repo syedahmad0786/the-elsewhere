@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ELSEWHERE — Take me somewhere useless</title>
+    <meta
+      name="description"
+      content="FT–012. A public portal for private waste. Ring once to be filed under miscellaneous."
+    />
+    <meta property="og:title" content="ELSEWHERE · FT–012" />
+    <meta
+      property="og:description"
+      content="Take me somewhere useless. A 2026 revival of the old useless web, catalogued as a museum portal."
+    />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="portal">
+    <canvas id="paper-grain" class="paper-grain" aria-hidden="true"></canvas>
+    <div class="watermark" aria-hidden="true">ELSEWHERE</div>
+
+    <header class="mast">
+      <p class="stamp" aria-label="Accession number">FT–012</p>
+      <div class="mast-copy">
+        <p class="kicker">Room 12 · Please do not ask where the exits are</p>
+        <h1>The Elsewhere</h1>
+        <p class="lede">
+          A public portal for private waste. Established for no reason that has
+          survived the minutes.
+        </p>
+      </div>
+    </header>
+
+    <main class="portal-main">
+      <button class="brass" id="go" type="button">
+        <span class="brass-title">Take me somewhere useless</span>
+        <span class="brass-hint">ring once · filing under miscellaneous</span>
+      </button>
+      <p id="last-sent" class="last-sent" hidden></p>
+
+      <section class="wings-intro">
+        <p class="mono-label">Directory</p>
+        <h2>Three wings. None of them help.</h2>
+      </section>
+      <section id="directory" class="catalog" aria-label="Destination directory"></section>
+
+      <section class="share-row" aria-label="Share">
+        <button type="button" id="share-sentence" class="ink-btn">
+          Send word
+        </button>
+        <button type="button" id="share-card" class="ink-btn ghost">
+          Keep a card
+        </button>
+        <p id="share-note" class="share-note" role="status"></p>
+      </section>
+    </main>
+
+    <div id="ritual" class="ritual" hidden>
+      <canvas id="ritual-grain" aria-hidden="true"></canvas>
+      <p class="ritual-line">filing you under miscellaneous</p>
+    </div>
+
+    <footer class="due-slip">
+      <p class="due-mark">See also</p>
+      <nav class="webring" aria-label="Fun Toys webring">
+        <a href="https://fun-toys-alpha.vercel.app">hub</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://rake-garden.vercel.app">prev</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://elsewho.vercel.app">next</a>
+      </nav>
+      <p class="colophon">Ahmad Bukhari · FT–012 · MIT 2026</p>
+    </footer>
+
+    <script type="module" src="/src/portal.ts"></script>
+  </body>
+</html>

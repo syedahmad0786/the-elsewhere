@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Usher — ELSEWHERE</title>
+    <meta
+      name="description"
+      content="The usher has been pointing since 1891. He does not know at what."
+    />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="room usher-room">
+    <canvas id="paper-grain" class="paper-grain" aria-hidden="true"></canvas>
+    <div class="watermark" aria-hidden="true">USHER</div>
+
+    <header class="room-mast">
+      <a class="back" href="./index.html">← the portal</a>
+      <p class="stamp small">FT–012.A</p>
+      <h1>The Usher</h1>
+      <p class="exhibit">
+        The usher has been pointing since 1891. He does not know at what.
+      </p>
+    </header>
+
+    <div id="stage" class="stage" aria-label="The usher’s hall">
+      <div id="hand-wrap" class="hand-wrap">
+        <svg
+          id="hand"
+          class="glove"
+          viewBox="0 0 180 110"
+          role="img"
+          aria-label="A white-gloved hand pointing from the edge of the room"
+        >
+          <defs>
+            <filter id="glove-shadow" x="-30%" y="-30%" width="160%" height="160%">
+              <feDropShadow dx="0" dy="3" stdDeviation="3.2" flood-color="#1a1612" flood-opacity="0.28" />
+            </filter>
+          </defs>
+          <g filter="url(#glove-shadow)">
+            <path
+              class="cuff"
+              d="M4 28h38c4 0 7 3 7 7v40c0 4-3 7-7 7H4c-2 0-3-1-3-3V31c0-2 1-3 3-3z"
+              fill="#f6f0e4"
+              stroke="#1a1612"
+              stroke-width="1.6"
+            />
+            <path d="M10 36h26M10 74h26" fill="none" stroke="#1a1612" stroke-width="1.1" opacity="0.55" />
+            <circle cx="14" cy="55" r="3.2" fill="#1a1612" />
+            <circle cx="14" cy="55" r="1.4" fill="#c4a36a" />
+            <path
+              d="M46 34c18-10 38-8 52-2 8 4 14 4 22-1 6-4 14-4 22 2 7 5 11 14 10 24-1 12-8 22-20 26-9 3-18 2-26-2-7-3-12-2-18 2-10 6-22 8-34 4-8-3-14-11-16-20-2-8 0-16 8-23z"
+              fill="#fffdf7"
+              stroke="#1a1612"
+              stroke-width="1.7"
+            />
+            <path
+              d="M118 36c10-8 28-10 42-4 8 4 14 12 14 22 0 11-6 20-16 24-12 5-26 3-36-6-7-6-9-16-4-36z"
+              fill="#fffdf7"
+              stroke="#1a1612"
+              stroke-width="1.7"
+            />
+            <path
+              d="M96 70c8 10 10 22 6 32-2 6-8 10-14 8-7-2-10-10-8-18 2-8 8-16 16-22z"
+              fill="#fffdf7"
+              stroke="#1a1612"
+              stroke-width="1.6"
+            />
+            <path
+              d="M78 74c6 10 6 22 1 31-3 6-9 8-14 5-6-3-8-11-5-18 4-9 10-16 18-18z"
+              fill="#fffdf7"
+              stroke="#1a1612"
+              stroke-width="1.6"
+            />
+            <path
+              d="M62 72c4 10 3 22-3 30-4 5-10 6-14 2-5-4-5-12-1-19 4-8 11-13 18-13z"
+              fill="#f7f1e6"
+              stroke="#1a1612"
+              stroke-width="1.6"
+            />
+            <path d="M70 44c12 2 24 3 38-2" fill="none" stroke="#1a1612" stroke-width="1" opacity="0.35" />
+            <path d="M68 54c14 3 28 2 44-4" fill="none" stroke="#1a1612" stroke-width="1" opacity="0.28" />
+            <path d="M72 63c10 2 20 1 32-3" fill="none" stroke="#1a1612" stroke-width="1" opacity="0.22" />
+            <path d="M128 42c10 4 18 8 22 16" fill="none" stroke="#1a1612" stroke-width="0.9" opacity="0.3" />
+          </g>
+        </svg>
+        <p id="way" class="way-label">this way</p>
+      </div>
+      <p id="gesture-note" class="gesture-note" hidden>The gesture has been recorded. Nothing will come of it.</p>
+    </div>
+
+    <footer class="due-slip">
+      <p class="due-mark">See also</p>
+      <nav class="webring" aria-label="Fun Toys webring">
+        <a href="https://fun-toys-alpha.vercel.app">hub</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://rake-garden.vercel.app">prev</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://elsewho.vercel.app">next</a>
+      </nav>
+      <p class="colophon">Ahmad Bukhari · FT–012.A · MIT 2026</p>
+    </footer>
+
+    <script type="module" src="/src/usher.ts"></script>
+  </body>
+</html>
